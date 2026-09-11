@@ -7,59 +7,60 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-gold: #c5a059;
-            --dark-bg: #121212;
-            --card-bg: #1e1e1e;
-            --text-light: #f4f4f4;
-            --text-muted: #aaa;
+            --primary-color: #222222;
+            --accent-gold: #c5a059;
+            --bg-light: #f4f4f4;
+            --card-bg: #ffffff;
+            --text-dark: #111111;
+            --text-muted: #555555;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--dark-bg); color: var(--text-light); line-height: 1.6; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
 
         /* Navigation Header */
-        nav { background: rgba(0, 0, 0, 0.9); padding: 15px 20px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(197, 160, 89, 0.3); display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-family: 'Cinzel', serif; font-size: 1.4em; font-weight: 700; color: var(--primary-gold); letter-spacing: 2px; }
+        nav { background: #ffffff; padding: 10px 20px; position: sticky; top: 0; z-index: 100; border-bottom: 2px solid #e0e0e0; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .logo-img { height: 45px; width: auto; object-fit: contain; }
 
         /* Hero Banner */
-        .hero { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=1000&auto=format&fit=crop') center/cover no-repeat; text-align: center; padding: 70px 20px; border-bottom: 2px solid var(--primary-gold); }
-        .hero h1 { font-family: 'Cinzel', serif; font-size: 2.2em; color: var(--primary-gold); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 3px; }
-        .hero p { font-size: 1em; color: var(--text-muted); font-weight: 300; margin-bottom: 25px; }
-        .cta-btn { display: inline-block; background: var(--primary-gold); color: #000; padding: 12px 30px; border-radius: 4px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .hero { background: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)), url('logo.png') center/contain no-repeat; text-align: center; padding: 50px 20px; border-bottom: 1px solid #ddd; }
+        .hero-logo { max-width: 280px; width: 100%; height: auto; margin-bottom: 15px; }
+        .hero p { font-size: 1.1em; color: var(--text-muted); font-weight: 500; margin-bottom: 20px; }
+        .cta-btn { display: inline-block; background: var(--primary-color); color: #fff; padding: 12px 30px; border-radius: 4px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
 
         /* Main Container */
         .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
-        .section-header { text-align: center; margin-bottom: 40px; }
-        .section-header h2 { font-family: 'Cinzel', serif; font-size: 1.8em; color: var(--primary-gold); display: inline-block; border-bottom: 2px solid var(--primary-gold); padding-bottom: 8px; }
+        .section-header { text-align: center; margin-bottom: 35px; }
+        .section-header h2 { font-family: 'Cinzel', serif; font-size: 1.8em; color: var(--primary-color); display: inline-block; border-bottom: 3px solid var(--accent-gold); padding-bottom: 5px; }
 
         /* Features / Categories */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 50px; }
-        .card { background: var(--card-bg); border: 1px solid rgba(197, 160, 89, 0.2); border-radius: 8px; padding: 25px; text-align: center; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
-        .card h3 { font-family: 'Cinzel', serif; color: var(--primary-gold); margin-bottom: 15px; font-size: 1.3em; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 40px; }
+        .card { background: var(--card-bg); border: 1px solid #e5e5e5; border-radius: 8px; padding: 25px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .card h3 { font-family: 'Cinzel', serif; color: var(--primary-color); margin-bottom: 12px; font-size: 1.3em; }
         .card p { color: var(--text-muted); font-size: 0.95em; }
 
-        /* Stats / Highlights */
-        .highlights { background: var(--card-bg); border-left: 4px solid var(--primary-gold); padding: 25px; border-radius: 4px; margin-bottom: 50px; }
-        .highlights h3 { color: var(--primary-gold); margin-bottom: 10px; font-family: 'Cinzel', serif; }
+        /* Highlights */
+        .highlights { background: #ffffff; border-left: 5px solid var(--primary-color); padding: 25px; border-radius: 4px; margin-bottom: 40px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .highlights h3 { color: var(--primary-color); margin-bottom: 8px; font-family: 'Cinzel', serif; }
 
         /* Contact Section */
-        .contact-card { background: linear-gradient(145deg, #1a1a1a, #242424); border: 1px solid var(--primary-gold); border-radius: 12px; padding: 30px 20px; text-align: center; }
-        .contact-card h3 { font-family: 'Cinzel', serif; font-size: 1.5em; color: var(--primary-gold); margin-bottom: 15px; }
-        .contact-info { margin: 15px 0; color: var(--text-light); font-size: 1em; }
-        .whatsapp-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background-color: #25D366; color: white; text-decoration: none; padding: 14px 30px; font-size: 1em; border-radius: 50px; font-weight: 600; margin-top: 15px; width: 100%; max-width: 300px; box-shadow: 0 4px 15px rgba(37,211,102,0.4); }
+        .contact-card { background: #ffffff; border: 2px solid var(--primary-color); border-radius: 12px; padding: 30px 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        .contact-card h3 { font-family: 'Cinzel', serif; font-size: 1.5em; color: var(--primary-color); margin-bottom: 15px; }
+        .contact-info { margin: 12px 0; color: var(--text-dark); font-size: 1em; }
+        .whatsapp-btn { display: inline-flex; align-items: center; justify-content: center; background-color: #25D366; color: white; text-decoration: none; padding: 14px 30px; font-size: 1em; border-radius: 50px; font-weight: 600; margin-top: 15px; width: 100%; max-width: 300px; box-shadow: 0 4px 12px rgba(37,211,102,0.3); }
 
-        footer { text-align: center; padding: 25px 10px; background: #080808; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-muted); font-size: 0.85em; }
+        footer { text-align: center; padding: 20px 10px; background: #111111; color: #ffffff; font-size: 0.85em; }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">AMASS</div>
+        <img src="logo.png" alt="Amass Handicraft Logo" class="logo-img">
         <a href="https://wa.me/917778883343" class="cta-btn" style="padding: 6px 15px; font-size: 0.8em;">Inquire</a>
     </nav>
 
     <section class="hero">
-        <h1>Amass Handicrafts</h1>
+        <img src="logo.png" alt="Amass Handicraft" class="hero-logo"><br>
         <p>Best Quality Handmade Products | Moradabad</p>
         <a href="#contact" class="cta-btn">Explore Catalog</a>
     </section>
