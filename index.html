@@ -1,67 +1,109 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amass Handicrafts - Best Quality Handmade Products</title>
+    <title>Amass Handicrafts | Premium Metal & Wooden Decor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; color: #333; line-height: 1.6; }
-        header { background: linear-gradient(135deg, #2c3e50, #8e44ad); color: white; padding: 40px 15px; text-align: center; }
-        header h1 { font-size: 2.2em; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; }
-        header p { font-size: 1.1em; opacity: 0.9; font-style: italic; }
-        .container { padding: 20px; max-width: 800px; margin: auto; }
-        .about-card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); margin-bottom: 25px; text-align: center; }
-        .section-title { color: #2c3e50; margin-bottom: 15px; text-align: center; border-bottom: 2px solid #8e44ad; display: inline-block; padding-bottom: 5px; }
-        .products-grid { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-bottom: 25px; }
-        .product-card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); flex: 1 1 250px; max-width: 350px; text-align: center; }
-        .product-card h3 { color: #8e44ad; margin-bottom: 10px; }
-        .contact-box { background: white; padding: 25px; border-radius: 10px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
-        .whatsapp-btn { display: inline-block; background-color: #25D366; color: white; text-decoration: none; padding: 12px 25px; font-size: 1.1em; border-radius: 30px; margin-top: 15px; font-weight: bold; box-shadow: 0 4px 10px rgba(37,211,102,0.3); }
-        footer { background: #2c3e50; color: white; text-align: center; padding: 15px; margin-top: 30px; font-size: 0.9em; }
+        :root {
+            --primary-gold: #c5a059;
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --text-light: #f4f4f4;
+            --text-muted: #aaa;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--dark-bg); color: var(--text-light); line-height: 1.6; }
+
+        /* Navigation Header */
+        nav { background: rgba(0, 0, 0, 0.9); padding: 15px 20px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(197, 160, 89, 0.3); display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Cinzel', serif; font-size: 1.4em; font-weight: 700; color: var(--primary-gold); letter-spacing: 2px; }
+
+        /* Hero Banner */
+        .hero { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1513519245088-0e12902e5a38?q=80&w=1000&auto=format&fit=crop') center/cover no-repeat; text-align: center; padding: 70px 20px; border-bottom: 2px solid var(--primary-gold); }
+        .hero h1 { font-family: 'Cinzel', serif; font-size: 2.2em; color: var(--primary-gold); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 3px; }
+        .hero p { font-size: 1em; color: var(--text-muted); font-weight: 300; margin-bottom: 25px; }
+        .cta-btn { display: inline-block; background: var(--primary-gold); color: #000; padding: 12px 30px; border-radius: 4px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+
+        /* Main Container */
+        .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
+        .section-header { text-align: center; margin-bottom: 40px; }
+        .section-header h2 { font-family: 'Cinzel', serif; font-size: 1.8em; color: var(--primary-gold); display: inline-block; border-bottom: 2px solid var(--primary-gold); padding-bottom: 8px; }
+
+        /* Features / Categories */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 50px; }
+        .card { background: var(--card-bg); border: 1px solid rgba(197, 160, 89, 0.2); border-radius: 8px; padding: 25px; text-align: center; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+        .card h3 { font-family: 'Cinzel', serif; color: var(--primary-gold); margin-bottom: 15px; font-size: 1.3em; }
+        .card p { color: var(--text-muted); font-size: 0.95em; }
+
+        /* Stats / Highlights */
+        .highlights { background: var(--card-bg); border-left: 4px solid var(--primary-gold); padding: 25px; border-radius: 4px; margin-bottom: 50px; }
+        .highlights h3 { color: var(--primary-gold); margin-bottom: 10px; font-family: 'Cinzel', serif; }
+
+        /* Contact Section */
+        .contact-card { background: linear-gradient(145deg, #1a1a1a, #242424); border: 1px solid var(--primary-gold); border-radius: 12px; padding: 30px 20px; text-align: center; }
+        .contact-card h3 { font-family: 'Cinzel', serif; font-size: 1.5em; color: var(--primary-gold); margin-bottom: 15px; }
+        .contact-info { margin: 15px 0; color: var(--text-light); font-size: 1em; }
+        .whatsapp-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background-color: #25D366; color: white; text-decoration: none; padding: 14px 30px; font-size: 1em; border-radius: 50px; font-weight: 600; margin-top: 15px; width: 100%; max-width: 300px; box-shadow: 0 4px 15px rgba(37,211,102,0.4); }
+
+        footer { text-align: center; padding: 25px 10px; background: #080808; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-muted); font-size: 0.85em; }
     </style>
 </head>
 <body>
 
-    <header>
+    <nav>
+        <div class="logo">AMASS</div>
+        <a href="https://wa.me/917778883343" class="cta-btn" style="padding: 6px 15px; font-size: 0.8em;">Inquire</a>
+    </nav>
+
+    <section class="hero">
         <h1>Amass Handicrafts</h1>
-        <p>Best Quality Handmade Products</p>
-    </header>
+        <p>Best Quality Handmade Products | Moradabad</p>
+        <a href="#contact" class="cta-btn">Explore Catalog</a>
+    </section>
 
     <div class="container">
-        <div class="about-card">
-            <h2 class="section-title">Humare Baare Mein</h2>
-            <p>Hum Moradabad ke behtareen Wooden aur Metal Decoration Products ke manufacturer aur supplier hain. Humare yahan har ek item high quality craftsmanship aur hathon se tayyar kiya jata hai.</p>
+        
+        <div class="highlights">
+            <h3>Exquisite Craftsmanship From Moradabad</h3>
+            <p>We specialize in premium wooden and metal decorative items designed for home decor, luxury gifting, and global exports. Every piece is handcrafted with perfection by skilled artisans.</p>
         </div>
 
-        <div style="text-align: center;">
-            <h2 class="section-title">Humari Specialties</h2>
+        <div class="section-header">
+            <h2>Our Collections</h2>
         </div>
 
-        <div class="products-grid">
-            <div class="product-card">
+        <div class="grid">
+            <div class="card">
                 <h3>🪵 Wooden Handicrafts</h3>
-                <p>Khubsurat aur durable Wooden Decorative Items, Wall Arts, aur Home Decor items.</p>
+                <p>Artisanal wooden decor items, wall art, trays, bowls, and custom handcrafted furniture elements.</p>
             </div>
-            <div class="product-card">
-                <h3>🪙 Metal Decoration Products</h3>
-                <p>Premium Metal Handicrafts, Decorative Showpieces, Vases, aur Custom Designs.</p>
+            <div class="card">
+                <h3>🪙 Metal Artifacts</h3>
+                <p>Premium brass, aluminum, and iron decor, designer vases, candle stands, and statement artifacts.</p>
+            </div>
+            <div class="card">
+                <h3>✨ Custom Designs</h3>
+                <p>Bulk orders and customized handicap products tailored specifically for wholesale & export needs.</p>
             </div>
         </div>
 
-        <div class="contact-box">
-            <h2 class="section-title">Humse Sampark Karein</h2>
-            <p><strong>📍 Location:</strong> Moradabad, Uttar Pradesh</p>
-            <p><strong>📞 Call / WhatsApp:</strong> +91 7778883343</p>
+        <div class="contact-card" id="contact">
+            <h3>Connect With Us</h3>
+            <p class="contact-info">📍 <strong>Location:</strong> Moradabad, Uttar Pradesh, India</p>
+            <p class="contact-info">📞 <strong>Direct Line:</strong> +91 7778883343</p>
             
-            <a href="https://wa.me/917778883343?text=Hello%20Amass%20Handicrafts,%20mujhe%20aapke%20products%20ke%20baare%20mein%20jankari%20chahiye." class="whatsapp-btn" target="_blank">
-                📱 WhatsApp Par Message Karein
+            <a href="https://wa.me/917778883343?text=Hello%20Amass%20Handicrafts,%20I%20want%20to%20know%20more%20about%20your%20products." class="whatsapp-btn" target="_blank">
+                Chat On WhatsApp
             </a>
         </div>
+
     </div>
 
     <footer>
-        <p>&copy; 2026 Amass Handicrafts | Moradabad</p>
+        <p>&copy; 2026 Amass Handicrafts. All Rights Reserved. | Export Quality Decor</p>
     </footer>
 
 </body>
