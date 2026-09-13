@@ -3,108 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amass Handicrafts | Premium Metal & Wooden Decor</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Amass Handicrafts | Amazon Style Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #222222;
-            --accent-gold: #c5a059;
-            --bg-light: #f4f4f4;
-            --card-bg: #ffffff;
-            --text-dark: #111111;
-            --text-muted: #555555;
-        }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+        body { font-family: 'Roboto', sans-serif; background-color: #eaeded; color: #0f1111; }
 
-        /* Navigation Header */
-        nav { background: #ffffff; padding: 10px 20px; position: sticky; top: 0; z-index: 100; border-bottom: 2px solid #e0e0e0; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .logo-img { height: 45px; width: auto; object-fit: contain; }
+        /* Amazon Header */
+        header { background-color: #131921; color: white; padding: 10px 15px; position: sticky; top: 0; z-index: 100; }
+        .top-nav { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+        .logo-img { height: 35px; background: #fff; padding: 2px 5px; border-radius: 4px; }
+        .search-container { flex: 1; display: flex; max-width: 500px; margin: 0 10px; }
+        .search-container input { width: 100%; padding: 8px 12px; border: none; border-radius: 4px 0 0 4px; outline: none; font-size: 0.9em; }
+        .search-btn { background-color: #febd69; border: none; padding: 8px 15px; border-radius: 0 4px 4px 0; cursor: pointer; font-weight: bold; }
 
-        /* Hero Banner */
-        .hero { background: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)), url('logo.png') center/contain no-repeat; text-align: center; padding: 50px 20px; border-bottom: 1px solid #ddd; }
-        .hero-logo { max-width: 280px; width: 100%; height: auto; margin-bottom: 15px; }
-        .hero p { font-size: 1.1em; color: var(--text-muted); font-weight: 500; margin-bottom: 20px; }
-        .cta-btn { display: inline-block; background: var(--primary-color); color: #fff; padding: 12px 30px; border-radius: 4px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        /* Sub Navigation */
+        .sub-nav { background-color: #232f3e; color: white; padding: 8px 15px; font-size: 0.85em; display: flex; gap: 15px; overflow-x: auto; white-space: nowrap; }
+        .sub-nav span { cursor: pointer; opacity: 0.9; }
 
-        /* Main Container */
-        .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
-        .section-header { text-align: center; margin-bottom: 35px; }
-        .section-header h2 { font-family: 'Cinzel', serif; font-size: 1.8em; color: var(--primary-color); display: inline-block; border-bottom: 3px solid var(--accent-gold); padding-bottom: 5px; }
+        /* Banner */
+        .banner { background: linear-gradient(to bottom, rgba(0,0,0,0.4), #eaeded), url('IMG_2788.png') center/contain no-repeat; height: 160px; background-color: #fff; text-align: center; padding-top: 15px; }
 
-        /* Features / Categories */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 40px; }
-        .card { background: var(--card-bg); border: 1px solid #e5e5e5; border-radius: 8px; padding: 25px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .card h3 { font-family: 'Cinzel', serif; color: var(--primary-color); margin-bottom: 12px; font-size: 1.3em; }
-        .card p { color: var(--text-muted); font-size: 0.95em; }
+        /* Container & Grid */
+        .container { max-width: 1200px; margin: auto; padding: 15px; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
 
-        /* Highlights */
-        .highlights { background: #ffffff; border-left: 5px solid var(--primary-color); padding: 25px; border-radius: 4px; margin-bottom: 40px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .highlights h3 { color: var(--primary-color); margin-bottom: 8px; font-family: 'Cinzel', serif; }
+        /* Amazon Product Card */
+        .product-card { background: white; border-radius: 4px; padding: 15px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #ddd; }
+        .product-img { width: 100%; height: 180px; object-fit: contain; margin-bottom: 10px; border-radius: 4px; }
+        .product-title { font-size: 0.95em; font-weight: 500; line-height: 1.3; height: 2.6em; overflow: hidden; margin-bottom: 5px; }
+        .rating { color: #ffa41c; font-size: 0.85em; margin-bottom: 5px; }
+        .price-box { margin: 8px 0; }
+        .price { font-size: 1.3em; font-weight: 700; color: #B12704; }
+        .mrp { font-size: 0.8em; color: #565959; text-decoration: line-through; margin-left: 5px; }
+        .badge { background-color: #CC0C39; color: white; font-size: 0.7em; font-weight: bold; padding: 2px 6px; border-radius: 2px; display: inline-block; margin-bottom: 5px; }
 
-        /* Contact Section */
-        .contact-card { background: #ffffff; border: 2px solid var(--primary-color); border-radius: 12px; padding: 30px 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
-        .contact-card h3 { font-family: 'Cinzel', serif; font-size: 1.5em; color: var(--primary-color); margin-bottom: 15px; }
-        .contact-info { margin: 12px 0; color: var(--text-dark); font-size: 1em; }
-        .whatsapp-btn { display: inline-flex; align-items: center; justify-content: center; background-color: #25D366; color: white; text-decoration: none; padding: 14px 30px; font-size: 1em; border-radius: 50px; font-weight: 600; margin-top: 15px; width: 100%; max-width: 300px; box-shadow: 0 4px 12px rgba(37,211,102,0.3); }
+        .buy-btn { background: #ffd814; border: 1px solid #fcd200; border-radius: 20px; padding: 10px; font-size: 0.85em; font-weight: bold; color: #0f1111; text-align: center; text-decoration: none; display: block; margin-top: 10px; box-shadow: 0 2px 5px rgba(213,217,217,0.5); }
+        .buy-btn:hover { background: #f7ca00; }
 
-        footer { text-align: center; padding: 20px 10px; background: #111111; color: #ffffff; font-size: 0.85em; }
+        footer { background-color: #131921; color: white; text-align: center; padding: 20px; font-size: 0.85em; margin-top: 30px; }
     </style>
 </head>
 <body>
 
-    <nav>
-        <img src="logo.png" alt="Amass Handicraft Logo" class="logo-img">
-        <a href="https://wa.me/917778883343" class="cta-btn" style="padding: 6px 15px; font-size: 0.8em;">Inquire</a>
-    </nav>
+    <header>
+        <div class="top-nav">
+            <img src="IMG_2788.png" alt="Logo" class="logo-img">
+            <div class="search-container">
+                <input type="text" placeholder="Search Wooden & Metal Decor...">
+                <button class="search-btn">🔍</button>
+            </div>
+        </div>
+    </header>
 
-    <section class="hero">
-        <img src="logo.png" alt="Amass Handicraft" class="hero-logo"><br>
-        <p>Best Quality Handmade Products | Moradabad</p>
-        <a href="#contact" class="cta-btn">Explore Catalog</a>
-    </section>
+    <div class="sub-nav">
+        <span><b>All Products</b></span>
+        <span>Wooden Decor</span>
+        <span>Metal Handicrafts</span>
+        <span>Moradabad Special</span>
+        <span>Wholesale Enquiries</span>
+    </div>
+
+    <div class="banner"></div>
 
     <div class="container">
-        
-        <div class="highlights">
-            <h3>Exquisite Craftsmanship From Moradabad</h3>
-            <p>We specialize in premium wooden and metal decorative items designed for home decor, luxury gifting, and global exports. Every piece is handcrafted with perfection by skilled artisans.</p>
-        </div>
+        <h2 style="margin-bottom: 15px; font-size: 1.2em;">Featured Handicrafts</h2>
 
-        <div class="section-header">
-            <h2>Our Collections</h2>
-        </div>
+        <div class="products-grid">
 
-        <div class="grid">
-            <div class="card">
-                <h3>🪵 Wooden Handicrafts</h3>
-                <p>Artisanal wooden decor items, wall art, trays, bowls, and custom handcrafted furniture elements.</p>
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div>
+                    <span class="badge">Best Seller</span>
+                    <img src="IMG_2788.png" class="product-img" alt="Product 1">
+                    <div class="product-title">Handcrafted Metal Flower Vase (Moradabad Brass Work)</div>
+                    <div class="rating">★★★★★ <span style="color:#007185;">(48)</span></div>
+                    <div class="price-box">
+                        <span class="price">₹1,299</span>
+                        <span class="mrp">₹2,499</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/917778883343?text=Hello%20Amass%20Handicrafts,%20mujhe%20Handcrafted%20Metal%20Flower%20Vase%20order%20karna%20hai." class="buy-btn" target="_blank">Order on WhatsApp</a>
             </div>
-            <div class="card">
-                <h3>🪙 Metal Artifacts</h3>
-                <p>Premium brass, aluminum, and iron decor, designer vases, candle stands, and statement artifacts.</p>
-            </div>
-            <div class="card">
-                <h3>✨ Custom Designs</h3>
-                <p>Bulk orders and customized handicap products tailored specifically for wholesale & export needs.</p>
-            </div>
-        </div>
 
-        <div class="contact-card" id="contact">
-            <h3>Connect With Us</h3>
-            <p class="contact-info">📍 <strong>Location:</strong> Moradabad, Uttar Pradesh, India</p>
-            <p class="contact-info">📞 <strong>Direct Line:</strong> +91 7778883343</p>
-            
-            <a href="https://wa.me/917778883343?text=Hello%20Amass%20Handicrafts,%20I%20want%20to%20know%20more%20about%20your%20products." class="whatsapp-btn" target="_blank">
-                Chat On WhatsApp
-            </a>
-        </div>
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div>
+                    <span class="badge">Limited Deal</span>
+                    <img src="IMG_2788.png" class="product-img" alt="Product 2">
+                    <div class="product-title">Premium Carved Wooden Wall Hanging Board</div>
+                    <div class="rating">★★★★☆ <span style="color:#007185;">(32)</span></div>
+                    <div class="price-box">
+                        <span class="price">₹899</span>
+                        <span class="mrp">₹1,799</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/917778883343?text=Hello%20Amass%20Handicrafts,%20mujhe%20Wooden%20Wall%20Hanging%20order%20karna%20hai." class="buy-btn" target="_blank">Order on WhatsApp</a>
+            </div>
 
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div>
+                    <img src="IMG_2788.png" class="product-img" alt="Product 3">
+                    <div class="product-title">Antique Finish Brass Metal Candle Holder</div>
+                    <div class="rating">★★★★★ <span style="color:#007185;">(19)</span></div>
+                    <div class="price-box">
+                        <span class="price">₹1,499</span>
+                        <span class="mrp">₹2,999</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/917778883343?text=Hello%20Amass%20Handicrafts,%20mujhe%20Brass%20Candle%20Holder%20order%20karna%20hai." class="buy-btn" target="_blank">Order on WhatsApp</a>
+            </div>
+
+        </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Amass Handicrafts. All Rights Reserved. | Export Quality Decor</p>
+        <p><b>Amass Handicrafts Store</b> | Moradabad, Uttar Pradesh</p>
+        <p style="margin-top:5px; color:#aaa;">Direct Factory Prices & Export Quality Products</p>
     </footer>
 
 </body>
