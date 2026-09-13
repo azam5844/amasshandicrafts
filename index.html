@@ -10,10 +10,13 @@
         body { font-family: 'Roboto', sans-serif; background-color: #eaeded; color: #0f1111; }
 
         /* Amazon Header */
-        header { background-color: #131921; color: white; padding: 10px 15px; position: sticky; top: 0; z-index: 100; }
+        header { background-color: #131921; color: white; padding: 8px 12px; position: sticky; top: 0; z-index: 100; }
         .top-nav { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-        .logo-img { height: 35px; background: #fff; padding: 2px 5px; border-radius: 4px; }
-        .search-container { flex: 1; display: flex; max-width: 500px; margin: 0 10px; }
+        
+        /* Round Logo Style */
+        .logo-img { height: 42px; width: 42px; object-fit: cover; border-radius: 50%; border: 1.5px solid #febd69; background: #fff; }
+        
+        .search-container { flex: 1; display: flex; max-width: 500px; margin: 0 5px; }
         .search-container input { width: 100%; padding: 8px 12px; border: none; border-radius: 4px 0 0 4px; outline: none; font-size: 0.9em; }
         .search-btn { background-color: #febd69; border: none; padding: 8px 15px; border-radius: 0 4px 4px 0; cursor: pointer; font-weight: bold; }
 
@@ -48,7 +51,7 @@
 
     <header>
         <div class="top-nav">
-            <img src="IMG_2788.png" alt="Logo" class="logo-img">
+            <img src="IMG_0487.png" alt="Amass Logo" class="logo-img">
             <div class="search-container">
                 <input type="text" placeholder="Search Wooden & Metal Decor...">
                 <button class="search-btn">🔍</button>
