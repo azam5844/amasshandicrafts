@@ -3,127 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amass Handicrafts | Amazon Style Store</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>AMASS HANDICRAFTS | Luxury Metal & Wooden Decor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-main: #0d0f12;
+            --bg-card: #161a1e;
+            --accent-gold: #d4af37;
+            --accent-gold-light: #f3e5ab;
+            --gold-gradient: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+            --btn-whatsapp: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            --text-light: #f0f0f0;
+            --text-muted: #9aa0a6;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Roboto', sans-serif; background-color: #eaeded; color: #0f1111; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-main); color: var(--text-light); line-height: 1.5; }
 
-        /* Amazon Header */
-        header { background-color: #131921; color: white; padding: 8px 12px; position: sticky; top: 0; z-index: 100; }
-        .top-nav { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+        /* Premium Dark Header */
+        header { background: #08090b; border-bottom: 1px solid rgba(212, 175, 55, 0.25); padding: 12px 16px; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
+        .top-nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; max-width: 1200px; margin: 0 auto; }
         
-        /* Round Logo Style */
-        .logo-img { height: 42px; width: 42px; object-fit: cover; border-radius: 50%; border: 1.5px solid #febd69; background: #fff; }
+        .logo-container { display: flex; align-items: center; gap: 10px; }
+        .logo-img { height: 42px; width: 42px; object-fit: cover; border-radius: 50%; border: 1.5px solid var(--accent-gold); box-shadow: 0 0 10px rgba(212, 175, 55, 0.3); }
+        .brand-name-header { font-family: 'Cinzel', serif; font-size: 1.1em; font-weight: 700; letter-spacing: 1.5px; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        .search-container { flex: 1; display: flex; max-width: 450px; position: relative; }
+        .search-container input { width: 100%; padding: 10px 16px; background: #1a1e24; border: 1px solid rgba(255,255,255,0.1); border-radius: 25px; color: #fff; font-size: 0.85em; outline: none; transition: 0.3s; }
+        .search-container input:focus { border-color: var(--accent-gold); box-shadow: 0 0 8px rgba(212, 175, 55, 0.3); }
+        .search-btn { position: absolute; right: 5px; top: 50%; transform: translateY(-50%); background: var(--gold-gradient); border: none; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; color: #000; font-weight: bold; }
+
+        /* Sub Navigation Filter */
+        .sub-nav { background: #111418; border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding: 10px 16px; font-size: 0.8em; display: flex; gap: 20px; overflow-x: auto; white-space: nowrap; }
+        .sub-nav span { cursor: pointer; color: var(--text-muted); transition: 0.3s; font-weight: 500; letter-spacing: 0.5px; }
+        .sub-nav span:hover, .sub-nav span.active { color: var(--accent-gold); font-weight: 600; }
+
+        /* Luxury Hero Banner */
+        .banner { background: linear-gradient(to bottom, rgba(13, 15, 18, 0.3), var(--bg-main)), url('IMG_2788.png') center/contain no-repeat; height: 180px; background-color: #14171c; text-align: center; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 10px; }
+
+        /* Main Container */
+        .container { max-width: 1200px; margin: auto; padding: 25px 15px; }
         
-        .search-container { flex: 1; display: flex; max-width: 500px; margin: 0 5px; }
-        .search-container input { width: 100%; padding: 8px 12px; border: none; border-radius: 4px 0 0 4px; outline: none; font-size: 0.9em; }
-        .search-btn { background-color: #febd69; border: none; padding: 8px 15px; border-radius: 0 4px 4px 0; cursor: pointer; font-weight: bold; }
+        .section-header { text-align: center; margin-bottom: 30px; position: relative; }
+        .section-header h2 { font-family: 'Cinzel', serif; font-size: 1.6em; letter-spacing: 3px; font-weight: 700; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; }
+        .section-header p { font-size: 0.8em; color: var(--text-muted); letter-spacing: 2px; text-transform: uppercase; margin-top: 4px; }
+        .section-header::after { content: ''; display: block; width: 60px; height: 2px; background: var(--gold-gradient); margin: 10px auto 0; border-radius: 2px; }
 
-        /* Sub Navigation */
-        .sub-nav { background-color: #232f3e; color: white; padding: 8px 15px; font-size: 0.85em; display: flex; gap: 15px; overflow-x: auto; white-space: nowrap; }
-        .sub-nav span { cursor: pointer; opacity: 0.9; }
+        /* Product Grid */
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
 
-        /* Banner */
-        .banner { background: linear-gradient(to bottom, rgba(0,0,0,0.4), #eaeded), url('IMG_2788.png') center/contain no-repeat; height: 160px; background-color: #fff; text-align: center; padding-top: 15px; }
+        /* Royal Card Design */
+        .product-card { background: var(--bg-card); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(212, 175, 55, 0.15); border-color: rgba(212, 175, 55, 0.3); }
 
-        /* Container & Grid */
-        .container { max-width: 1200px; margin: auto; padding: 15px; }
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
+        .img-wrapper { background: #fff; border-radius: 8px; padding: 10px; margin-bottom: 14px; position: relative; }
+        .product-img { width: 100%; height: 200px; object-fit: contain; }
+        
+        .badge { position: absolute; top: 18px; left: 18px; background: var(--gold-gradient); color: #000; font-size: 0.65em; font-weight: 700; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 2px 6px rgba(0,0,0,0.3); }
 
-        /* Amazon Product Card */
-        .product-card { background: white; border-radius: 4px; padding: 15px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border: 1px solid #ddd; }
-        .product-img { width: 100%; height: 180px; object-fit: contain; margin-bottom: 10px; border-radius: 4px; }
-        .product-title { font-size: 0.95em; font-weight: 500; line-height: 1.3; height: 2.6em; overflow: hidden; margin-bottom: 5px; }
-        .rating { color: #ffa41c; font-size: 0.85em; margin-bottom: 5px; }
-        .price-box { margin: 8px 0; }
-        .price { font-size: 1.3em; font-weight: 700; color: #B12704; }
-        .mrp { font-size: 0.8em; color: #565959; text-decoration: line-through; margin-left: 5px; }
-        .badge { background-color: #CC0C39; color: white; font-size: 0.7em; font-weight: bold; padding: 2px 6px; border-radius: 2px; display: inline-block; margin-bottom: 5px; }
+        .product-title { font-size: 0.95em; font-weight: 600; color: #fff; line-height: 1.4; height: 2.8em; overflow: hidden; margin-bottom: 8px; }
+        .rating { color: #ffd700; font-size: 0.8em; margin-bottom: 8px; display: flex; align-items: center; gap: 4px; }
+        .rating span { color: var(--text-muted); font-size: 0.85em; }
 
-        .buy-btn { background: #ffd814; border: 1px solid #fcd200; border-radius: 20px; padding: 10px; font-size: 0.85em; font-weight: bold; color: #0f1111; text-align: center; text-decoration: none; display: block; margin-top: 10px; box-shadow: 0 2px 5px rgba(213,217,217,0.5); }
-        .buy-btn:hover { background: #f7ca00; }
+        .price-box { margin: 10px 0 14px 0; display: flex; align-items: baseline; gap: 8px; }
+        .price { font-size: 1.35em; font-weight: 700; color: var(--accent-gold-light); }
+        .mrp { font-size: 0.8em; color: var(--text-muted); text-decoration: line-through; }
+        .discount { font-size: 0.75em; color: #4cd964; font-weight: 600; }
 
-        footer { background-color: #131921; color: white; text-align: center; padding: 20px; font-size: 0.85em; margin-top: 30px; }
+        .buy-btn { background: var(--btn-whatsapp); border: none; border-radius: 25px; padding: 12px; font-size: 0.85em; font-weight: 600; color: #ffffff; text-align: center; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.3s; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25); }
+        .buy-btn:hover { box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4); opacity: 0.95; }
+
+        footer { background: #060708; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; padding: 25px 15px; font-size: 0.8em; color: var(--text-muted); margin-top: 40px; }
+        footer b { color: var(--accent-gold); font-family: 'Cinzel', serif; }
     </style>
 </head>
 <body>
 
     <header>
         <div class="top-nav">
-            <img src="IMG_0487.png" alt="Amass Logo" class="logo-img">
+            <div class="logo-container">
+                <img src="IMG_0487.png" alt="Amass Logo" class="logo-img">
+                <span class="brand-name-header">AMASS</span>
+            </div>
             <div class="search-container">
-                <input type="text" placeholder="Search Wooden & Metal Decor...">
+                <input type="text" placeholder="Search luxury handicrafts...">
                 <button class="search-btn">🔍</button>
             </div>
         </div>
     </header>
 
     <div class="sub-nav">
-        <span><b>All Products</b></span>
+        <span class="active">All Collections</span>
         <span>Wooden Decor</span>
-        <span>Metal Handicrafts</span>
-        <span>Moradabad Special</span>
-        <span>Wholesale Enquiries</span>
+        <span>Metal Artifacts</span>
+        <span>Moradabad Brass</span>
+        <span>Export Wholesale</span>
     </div>
 
     <div class="banner"></div>
 
     <div class="container">
-        <h2 style="margin-bottom: 15px; font-size: 1.3em; text-transform: uppercase; letter-spacing: 0.5px;">AMASS HANDICRAFTS</h2>
+        
+        <div class="section-header">
+            <h2>AMASS HANDICRAFTS</h2>
+            <p>Premium Metal & Wooden Decor</p>
+        </div>
 
         <div class="products-grid">
 
             <!-- Product 1 -->
             <div class="product-card">
                 <div>
-                    <span class="badge">Best Seller</span>
-                    <img src="IMG_2788.png" class="product-img" alt="Product 1">
+                    <div class="img-wrapper">
+                        <span class="badge">Best Seller</span>
+                        <img src="IMG_2788.png" class="product-img" alt="Product 1">
+                    </div>
                     <div class="product-title">Handcrafted Metal Flower Vase (Moradabad Brass Work)</div>
-                    <div class="rating">★★★★★ <span style="color:#007185;">(48)</span></div>
+                    <div class="rating">★★★★★ <span>(48 Reviews)</span></div>
                     <div class="price-box">
                         <span class="price">₹1,299</span>
                         <span class="mrp">₹2,499</span>
+                        <span class="discount">48% OFF</span>
                     </div>
                 </div>
-                <a href="https://wa.me/917778883343?text=Hello%20Amass%20Handicrafts,%20mujhe%20Handcrafted%20Metal%20Flower%20Vase%20order%20karna%20hai." class="buy-btn" target="_blank">Order on WhatsApp</a>
+                <a href="https://wa.me/917778883343?text=Hello%20Amass%20Handicrafts,%20mujhe%20Handcrafted%20Metal%20Flower%20Vase%20order%20karna%20hai." class="buy-btn" target="_blank">
+                    <span>Order on WhatsApp</span>
+                </a>
             </div>
 
             <!-- Product 2 -->
             <div class="product-card">
                 <div>
-                    <span class="badge">Limited Deal</span>
-                    <img src="IMG_2788.png" class="product-img" alt="Product 2">
+                    <div class="img-wrapper">
+                        <span class="badge">Exclusive</span>
+                        <img src="IMG_2788.png" class="product-img" alt="Product 2">
+                    </div>
                     <div class="product-title">Premium Carved Wooden Wall Hanging Board</div>
-                    <div class="rating">★★★★☆ <span style="color:#007185;">(32)</span></div>
+                    <div class="rating">★★★★☆ <span>(32 Reviews)</span></div>
                     <div class="price-box">
                         <span class="price">₹899</span>
                         <span class="mrp">₹1,799</span>
+                        <span class="discount">50% OFF</span>
                     </div>
                 </div>
-                <a href="https://wa.me/917778883343?text=Hello%20Amass%20Handicrafts,%20mujhe%20Wooden%20Wall%20Hanging%20order%20karna%20hai." class="buy-btn" target="_blank">Order on WhatsApp</a>
+                <a href="https://wa.me/917778883343?text=Hello%20Amass%20Handicrafts,%20mujhe%20Wooden%20Wall%20Hanging%20order%20karna%20hai." class="buy-btn" target="_blank">
+                    <span>Order on WhatsApp</span>
+                </a>
             </div>
 
             <!-- Product 3 -->
             <div class="product-card">
                 <div>
-                    <img src="IMG_2788.png" class="product-img" alt="Product 3">
+                    <div class="img-wrapper">
+                        <img src="IMG_2788.png" class="product-img" alt="Product 3">
+                    </div>
                     <div class="product-title">Antique Finish Brass Metal Candle Holder</div>
-                    <div class="rating">★★★★★ <span style="color:#007185;">(19)</span></div>
+                    <div class="rating">★★★★★ <span>(19 Reviews)</span></div>
                     <div class="price-box">
                         <span class="price">₹1,499</span>
                         <span class="mrp">₹2,999</span>
+                        <span class="discount">50% OFF</span>
                     </div>
                 </div>
-                <a href="https://wa.me/917778883343?text=Hello%20Amass%20Handicrafts,%20mujhe%20Brass%20Candle%20Holder%20order%20karna%20hai." class="buy-btn" target="_blank">Order on WhatsApp</a>
+                <a href="https://wa.me/917778883343?text=Hello%20Amass%20Handicrafts,%20mujhe%20Brass%20Candle%20Holder%20order%20karna%20hai." class="buy-btn" target="_blank">
+                    <span>Order on WhatsApp</span>
+                </a>
             </div>
 
         </div>
     </div>
 
     <footer>
-        <p><b>Amass Handicrafts Store</b> | Moradabad, Uttar Pradesh</p>
-        <p style="margin-top:5px; color:#aaa;">Direct Factory Prices & Export Quality Products</p>
+        <p><b>AMASS HANDICRAFTS</b> | Moradabad, Uttar Pradesh, India</p>
+        <p style="margin-top:6px; color:#666;">Crafting Excellence & Global Exports</p>
     </footer>
 
 </body>
