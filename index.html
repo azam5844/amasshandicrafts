@@ -1,182 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMASS HANDICRAFTS | Luxury Metal & Wooden Decor</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-main: #0d0f12;
-            --bg-card: #161a1e;
-            --accent-gold: #d4af37;
-            --accent-gold-light: #f3e5ab;
-            --gold-gradient: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
-            --btn-whatsapp: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-            --text-light: #f0f0f0;
-            --text-muted: #9aa0a6;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg-main); color: var(--text-light); line-height: 1.5; }
-
-        /* Premium Dark Header */
-        header { background: #08090b; border-bottom: 1px solid rgba(212, 175, 55, 0.25); padding: 12px 16px; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
-        .top-nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; max-width: 1200px; margin: 0 auto; }
-        
-        .logo-container { display: flex; align-items: center; gap: 10px; }
-        .logo-img { height: 42px; width: 42px; object-fit: cover; border-radius: 50%; border: 1.5px solid var(--accent-gold); box-shadow: 0 0 10px rgba(212, 175, 55, 0.3); }
-        .brand-name-header { font-family: 'Cinzel', serif; font-size: 1.1em; font-weight: 700; letter-spacing: 1.5px; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-
-        .search-container { flex: 1; display: flex; max-width: 450px; position: relative; }
-        .search-container input { width: 100%; padding: 10px 16px; background: #1a1e24; border: 1px solid rgba(255,255,255,0.1); border-radius: 25px; color: #fff; font-size: 0.85em; outline: none; transition: 0.3s; }
-        .search-container input:focus { border-color: var(--accent-gold); box-shadow: 0 0 8px rgba(212, 175, 55, 0.3); }
-        .search-btn { position: absolute; right: 5px; top: 50%; transform: translateY(-50%); background: var(--gold-gradient); border: none; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; color: #000; font-weight: bold; }
-
-        /* Sub Navigation Filter */
-        .sub-nav { background: #111418; border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding: 10px 16px; font-size: 0.8em; display: flex; gap: 20px; overflow-x: auto; white-space: nowrap; }
-        .sub-nav span { cursor: pointer; color: var(--text-muted); transition: 0.3s; font-weight: 500; letter-spacing: 0.5px; }
-        .sub-nav span:hover, .sub-nav span.active { color: var(--accent-gold); font-weight: 600; }
-
-        /* Luxury Hero Banner */
-        .banner { background: linear-gradient(to bottom, rgba(13, 15, 18, 0.3), var(--bg-main)), url('IMG_2788.png') center/contain no-repeat; height: 180px; background-color: #14171c; text-align: center; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 10px; }
-
-        /* Main Container */
-        .container { max-width: 1200px; margin: auto; padding: 25px 15px; }
-        
-        .section-header { text-align: center; margin-bottom: 30px; position: relative; }
-        .section-header h2 { font-family: 'Cinzel', serif; font-size: 1.6em; letter-spacing: 3px; font-weight: 700; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-transform: uppercase; }
-        .section-header p { font-size: 0.8em; color: var(--text-muted); letter-spacing: 2px; text-transform: uppercase; margin-top: 4px; }
-        .section-header::after { content: ''; display: block; width: 60px; height: 2px; background: var(--gold-gradient); margin: 10px auto 0; border-radius: 2px; }
-
-        /* Product Grid */
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-
-        /* Royal Card Design */
-        .product-card { background: var(--bg-card); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(212, 175, 55, 0.15); border-color: rgba(212, 175, 55, 0.3); }
-
-        .img-wrapper { background: #fff; border-radius: 8px; padding: 10px; margin-bottom: 14px; position: relative; }
-        .product-img { width: 100%; height: 200px; object-fit: contain; }
-        
-        .badge { position: absolute; top: 18px; left: 18px; background: var(--gold-gradient); color: #000; font-size: 0.65em; font-weight: 700; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 2px 6px rgba(0,0,0,0.3); }
-
-        .product-title { font-size: 0.95em; font-weight: 600; color: #fff; line-height: 1.4; height: 2.8em; overflow: hidden; margin-bottom: 8px; }
-        .rating { color: #ffd700; font-size: 0.8em; margin-bottom: 8px; display: flex; align-items: center; gap: 4px; }
-        .rating span { color: var(--text-muted); font-size: 0.85em; }
-
-        .price-box { margin: 10px 0 14px 0; display: flex; align-items: baseline; gap: 8px; }
-        .price { font-size: 1.35em; font-weight: 700; color: var(--accent-gold-light); }
-        .mrp { font-size: 0.8em; color: var(--text-muted); text-decoration: line-through; }
-        .discount { font-size: 0.75em; color: #4cd964; font-weight: 600; }
-
-        .buy-btn { background: var(--btn-whatsapp); border: none; border-radius: 25px; padding: 12px; font-size: 0.85em; font-weight: 600; color: #ffffff; text-align: center; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.3s; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25); }
-        .buy-btn:hover { box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4); opacity: 0.95; }
-
-        footer { background: #060708; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; padding: 25px 15px; font-size: 0.8em; color: var(--text-muted); margin-top: 40px; }
-        footer b { color: var(--accent-gold); font-family: 'Cinzel', serif; }
-    </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#10131c">
+<title>AMASS HANDICRAFTS — Virtual Shopping World</title>
+<style>
+:root{--gold:#f0c75e;--ink:#10131c;--panel:rgba(13,17,27,.88);--muted:#b9c0ce}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#111522;color:#fff;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif}button,input,textarea{font:inherit}button{cursor:pointer}
+#world{position:fixed;inset:0}canvas{display:block}
+#topbar{position:fixed;z-index:5;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:linear-gradient(180deg,rgba(5,8,15,.86),transparent);pointer-events:none}
+.brand{font-weight:900;letter-spacing:.13em;color:var(--gold);text-shadow:0 2px 15px #000;font-size:clamp(13px,2vw,19px)}.top-actions{display:flex;gap:8px;pointer-events:auto}
+.pill,.action{border:1px solid rgba(240,199,94,.55);background:rgba(13,17,27,.82);color:#fff;border-radius:999px;padding:9px 14px;font-size:12px;font-weight:700;backdrop-filter:blur(12px)}.pill.active,.action.primary{background:var(--gold);color:#151515;border-color:var(--gold)}
+#intro{position:fixed;z-index:10;inset:0;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 45%,rgba(45,55,83,.45),rgba(5,8,15,.94)),linear-gradient(135deg,#111827,#090b12);padding:20px;text-align:center}
+.intro-card{width:min(620px,100%);padding:clamp(24px,5vw,48px);border:1px solid rgba(240,199,94,.5);border-radius:26px;background:rgba(10,14,23,.76);box-shadow:0 30px 100px #0008;backdrop-filter:blur(18px)}
+.kicker{font-size:11px;letter-spacing:.35em;color:var(--gold);font-weight:800}.intro-card h1{font-family:Georgia,serif;font-size:clamp(32px,7vw,62px);line-height:1.03;margin:16px 0 10px}.intro-card p{color:#c7cedb;line-height:1.7;max-width:470px;margin:0 auto 24px}.intro-buttons{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+#hud{position:fixed;z-index:4;left:14px;top:76px;max-width:min(340px,70vw);padding:11px 14px;border:1px solid #ffffff20;border-radius:14px;background:var(--panel);backdrop-filter:blur(12px);font-size:12px;line-height:1.5}
+#hint{color:var(--gold);font-weight:800;margin-top:3px}
+#crosshair{position:fixed;z-index:3;left:50%;top:50%;width:8px;height:8px;border:1px solid #fff9;border-radius:50%;transform:translate(-50%,-50%);pointer-events:none}
+#controls{position:fixed;z-index:5;left:16px;bottom:20px;display:none;gap:10px;align-items:end}
+#joy{width:116px;height:116px;border-radius:50%;border:1px solid #ffffff55;background:#10172599;position:relative;touch-action:none;backdrop-filter:blur(8px)}
+#knob{position:absolute;width:44px;height:44px;left:35px;top:35px;border-radius:50%;background:#f0c75e;box-shadow:0 4px 15px #0008}
+#looktip{position:fixed;z-index:4;right:14px;bottom:24px;color:#fff9;font-size:11px;background:#11182799;padding:9px 12px;border-radius:12px;display:none}
+#interact{position:fixed;z-index:6;left:50%;bottom:25px;transform:translateX(-50%);display:none}
+#cartBtn{position:fixed;z-index:6;right:16px;top:72px}
+#toast{position:fixed;z-index:30;left:50%;top:18%;transform:translateX(-50%);background:#101827ed;border:1px solid #f0c75e88;padding:10px 16px;border-radius:12px;display:none;font-size:13px}
+.overlay{position:fixed;z-index:20;inset:0;background:#05070bcc;display:none;align-items:center;justify-content:center;padding:16px}
+.sheet{width:min(560px,100%);max-height:88vh;overflow:auto;background:#121927;border:1px solid #f0c75e77;border-radius:22px;padding:22px;box-shadow:0 25px 90px #000b}
+.sheet-head{display:flex;justify-content:space-between;align-items:center;gap:12px}.sheet h2{margin:0;color:var(--gold);font-family:Georgia,serif}.close{border:0;border-radius:50%;width:34px;height:34px;background:#ffffff18;color:white;font-size:20px}
+.product-visual{height:170px;border-radius:16px;background:radial-gradient(circle at 50% 40%,#59637a,#20283a 60%,#121927);display:grid;place-items:center;font-size:78px;margin:16px 0}
+.meta{color:var(--muted);font-size:13px;line-height:1.8}.price{font-size:25px;color:var(--gold);font-weight:900;margin:10px 0}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.row>*{flex:1}
+select,input,textarea{width:100%;background:#0c111b;border:1px solid #ffffff25;color:#fff;border-radius:10px;padding:11px;margin:5px 0 12px}
+.cart-line{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #ffffff18;font-size:13px}.muted{color:var(--muted)}
+#modeNote{font-size:11px;color:var(--muted)}
+@media(hover:none),(max-width:700px){#controls{display:flex}#looktip{display:block}#hud{top:68px;max-width:58vw;font-size:11px}#cartBtn{top:auto;bottom:22px;right:14px}#crosshair{display:none}.top-actions .pill{padding:8px 10px;font-size:11px}}
+</style>
 </head>
 <body>
-
-    <header>
-        <div class="top-nav">
-            <div class="logo-container">
-                <img src="IMG_0487.png" alt="Amass Logo" class="logo-img">
-                <span class="brand-name-header">AMASS</span>
-            </div>
-            <div class="search-container">
-                <input type="text" placeholder="Search luxury handicrafts...">
-                <button class="search-btn">🔍</button>
-            </div>
-        </div>
-    </header>
-
-    <div class="sub-nav">
-        <span class="active">All Collections</span>
-        <span>Wooden Decor</span>
-        <span>Metal Artifacts</span>
-        <span>Moradabad Brass</span>
-        <span>Export Wholesale</span>
-    </div>
-
-    <div class="banner"></div>
-
-    <div class="container">
-        
-        <div class="section-header">
-            <h2>AMASS HANDICRAFTS</h2>
-            <p>Premium Metal & Wooden Decor</p>
-        </div>
-
-        <div class="products-grid">
-
-            <!-- Product 1 -->
-            <div class="product-card">
-                <div>
-                    <div class="img-wrapper">
-                        <span class="badge">Best Seller</span>
-                        <img src="IMG_2788.png" class="product-img" alt="Product 1">
-                    </div>
-                    <div class="product-title">Handcrafted Metal Flower Vase (Moradabad Brass Work)</div>
-                    <div class="rating">★★★★★ <span>(48 Reviews)</span></div>
-                    <div class="price-box">
-                        <span class="price">₹1,299</span>
-                        <span class="mrp">₹2,499</span>
-                        <span class="discount">48% OFF</span>
-                    </div>
-                </div>
-                <a href="https://wa.me/917778883343?text=Hello%20Amass%20Handicrafts,%20mujhe%20Handcrafted%20Metal%20Flower%20Vase%20order%20karna%20hai." class="buy-btn" target="_blank">
-                    <span>Order on WhatsApp</span>
-                </a>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="product-card">
-                <div>
-                    <div class="img-wrapper">
-                        <span class="badge">Exclusive</span>
-                        <img src="IMG_2788.png" class="product-img" alt="Product 2">
-                    </div>
-                    <div class="product-title">Premium Carved Wooden Wall Hanging Board</div>
-                    <div class="rating">★★★★☆ <span>(32 Reviews)</span></div>
-                    <div class="price-box">
-                        <span class="price">₹899</span>
-                        <span class="mrp">₹1,799</span>
-                        <span class="discount">50% OFF</span>
-                    </div>
-                </div>
-                <a href="https://wa.me/917778883343?text=Hello%20Amass%20Handicrafts,%20mujhe%20Wooden%20Wall%20Hanging%20order%20karna%20hai." class="buy-btn" target="_blank">
-                    <span>Order on WhatsApp</span>
-                </a>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-card">
-                <div>
-                    <div class="img-wrapper">
-                        <img src="IMG_2788.png" class="product-img" alt="Product 3">
-                    </div>
-                    <div class="product-title">Antique Finish Brass Metal Candle Holder</div>
-                    <div class="rating">★★★★★ <span>(19 Reviews)</span></div>
-                    <div class="price-box">
-                        <span class="price">₹1,499</span>
-                        <span class="mrp">₹2,999</span>
-                        <span class="discount">50% OFF</span>
-                    </div>
-                </div>
-                <a href="https://wa.me/917778883343?text=Hello%20Amass%20Handicrafts,%20mujhe%20Brass%20Candle%20Holder%20order%20karna%20hai." class="buy-btn" target="_blank">
-                    <span>Order on WhatsApp</span>
-                </a>
-            </div>
-
-        </div>
-    </div>
-
-    <footer>
-        <p><b>AMASS HANDICRAFTS</b> | Moradabad, Uttar Pradesh, India</p>
-        <p style="margin-top:6px; color:#666;">Crafting Excellence & Global Exports</p>
-    </footer>
-
-</body>
-</html>
+<div id="world"></div>
+<div id="topbar"><div class="brand">✦ AMASS HANDICRAFTS</div><div class="top-actions"><button class="pill active" id="thirdBtn">3rd Person</button><button class="pill" id="firstBtn">1st Person</button></div></div>
+<div id="hud"><b>VIRTUAL SHOPPING WORLD</b><div>Explore the showroom and visit a stall.</div><div id="hint">Find a stall to begin</div><div id="modeNote">WASD / Arrow keys to move · Drag to look</div></div>
+<button class="action" id="cartBtn">🧺 Basket <span id="cartCount">0</span></button>
+<div id="crosshair"></div><div id="toast"></div>
+<div id="controls"><div id="joy"><div id="knob"></div></div></div><div id="looktip">Drag screen to look around</div>
+<button class="action primary" id="interact">View Products</button>
+<div id="intro"><div class="intro-card"><div class="kicker">MORADABAD · INDIA</div><h1>WELCOME TO<br><span style="color:#f0c75e">AMASS HANDICRAFTS</span></h1><p>Explore our virtual handcrafted world. Walk through the stalls, discover collections and add your favourites to your shopping basket.</p><div class="intro-buttons"><button class="action primary" id="enter">ENTER SHOWROOM</button><button class="action" id="catalogEnter">Browse Catalogue</button></div><p style="font-size:11px;margin:20px 0 0;color:#8f9bad">Prototype experience · Sample products and demo checkout</p></div></div>
+<div class="overlay" id="productModal"><div class="sheet"><div class="sheet-head"><h2 id="productTitle">Collection</h2><button class="close" data-close="productModal">×</button></div><div class="product-visual" id="productEmoji">🪴</div><div class="meta" id="productInfo"></div><div class="price" id="productPrice"></div><label class="muted">Choose colour</label><select id="colour"></select><label class="muted">Quantity</label><input id="quantity" type="number" min="1" value="1"><button class="action primary" style="width:100%" id="addToCart">＋ Add to Basket</button></div></div>
+<div class="overlay" id="cartModal"><div class="sheet"><div class="sheet-head"><h2>Your Shopping Basket</h2><button class="close" data-close="cartModal">×</button></div><div id="cartItems"></div><div class="price" id="cartTotal">Total: ₹0</div><button class="action primary" style="width:100%" id="checkoutBtn">Proceed to Billing Counter</button></div></div>
+<div class="overlay" id="checkoutModal"><div class="sheet"><div class="sheet-head"><h2>Billing Counter</h2><button class="close" data-close="checkoutModal">×</button></div><p class="muted">Enter delivery details to create a demo order.</p><label class="muted">Full name</label><input id="custName" placeholder="Your name"><label class="muted">Mobile number</label><input id="custPhone" inputmode="tel" placeholder="10-digit mobile number"><label class="muted">Delivery address</label><textarea id="custAddress" rows="3" placeholder="House, street, city, state, PIN"></textarea><div class="meta">Payment: Demo checkout (no money will be charged)</div><div class="price" id="checkoutTotal"></div><button class="action primary" style="width:100%" id="placeOrder">Confirm Demo Order</button></div></div>
+<div class="overlay" id="catalogModal"><div class="sheet"><div class="sheet-head"><h2>Shop Collections</h2><button class="close" data-close="catalogModal">×</button></div><div id="catalogList"></div></div></div>
+<script type="module">
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
+const $=id=>document.getElementById(id);
+const categories=[
+ {id:'fruit',name:'Fruit Basket',emoji:'🧺',desc:'Handcrafted metal fruit baskets for elegant everyday living.',products:[{id:'fb1',name:'Decorative Wire Fruit Basket',price:899,size:'12 × 12 × 8 inches',colours:['Gold','Black','White'],emoji:'🧺',material:'Iron'}]},
+ {id:'plant',name:'Plant Stand',emoji:'🪴',desc:'Stylish metal plant stands for balconies, gardens and interiors.',products:[{id:'ps1',name:'Single Tier Plant Stand with Planter',price:1499,size:'Stand 8.5 × 8.5 × 22 in · Planter 8 × 8 × 8 in',colours:['White','Black','Gold','Green'],emoji:'🪴',material:'Metal'}]},
+ {id:'tables',name:'Tables & Table Tops',emoji:'🪑',desc:'Statement tables and handcrafted table tops.',products:[{id:'tt1',name:'Metal Side Table with Top',price:2499,size:'Size options available',colours:['Black','Gold','White'],emoji:'🪑',material:'Metal'}]},
+ {id:'decor',name:'Home Decor',emoji:'🏺',desc:'Distinctive handcrafted accents for beautiful spaces.',products:[{id:'hd1',name:'Decorative Home Accent',price:699,size:'Multiple designs available',colours:['Gold','Black','White'],emoji:'🏺',material:'Iron'}]}
+];
+let cart=[],activeProduct=null,activeStall=null,started=false,mode='third',nearStall=null;
+const scene=new THREE.Scene();scene.background=new THREE.Color(0x9db7d0);scene.fog=new THREE.Fog(0x9db7d0,28,85);
+const camera=new THREE.PerspectiveCamera(68,innerWidth/innerHeight,.1,150);
+const renderer=new THREE.WebGLRenderer({antialias:true});renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));renderer.setSize(innerWidth,innerHeight);renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;$('world').appendChild(renderer.domElement);
+scene.add(new THREE.HemisphereLight(0xdcecff,0x66513c,2));
+const sun=new THREE.DirectionalLight(0xffe4ad,2.5);sun.position.set(-12,24,10);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);scene.add(sun);
+const mat=(c,rough=.7,metal=0)=>new THREE.MeshStandardMaterial({color:c,roughness:rough,metalness:metal});
+const floorMat=mat(0x343a4b,.88),gold=mat(0xd9ae4b,.35,.72),dark=mat(0x202635,.55,.3),cream=mat(0xe7d8b8),green=mat(0x3b7958);
+function box(w,h,d,m,x,y,z){const o=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),m);o.position.set(x,y,z);o.castShadow=true;o.receiveShadow=true;scene.add(o);return o}
+const floor=new THREE.Mesh(new THREE.PlaneGeometry(100,100),floorMat);floor.rotation.x=-Math.PI/2;floor.position.y=-.08;floor.receiveShadow=true;scene.add(floor);
+const grid=new THREE.GridHelper(80,40,0x8b7952,0x596273);grid.position.y=-.06;scene.add(grid);
+// grand welcome portal
+box(18,.6,1.1,dark,0,5,-15);box(.5,5,1,gold,-8.7,2.5,-15);box(.5,5,1,gold,8.7,2.5,-15);box(17,.22,1,gold,0,4.85,-15);
+function textSprite(txt){const c=document.createElement('canvas');c.width=1024;c.height=256;const x=c.getContext('2d');x.fillStyle='#111827';x.fillRect(0,0,1024,256);x.strokeStyle='#e6bd5b';x.lineWidth=10;x.strokeRect(8,8,1008,240);x.fillStyle='#f4d27d';x.font='bold 76px Georgia';x.textAlign='center';x.fillText(txt,512,155);const t=new THREE.CanvasTexture(c);const s=new THREE.Sprite(new THREE.SpriteMaterial({map:t}));s.scale.set(12,3,1);return s}
+const sign=textSprite('AMASS HANDICRAFTS');sign.position.set(0,6.7,-15);scene.add(sign);
+const subtitle=textSprite('WELCOME · EXPLORE · SHOP');subtitle.scale.set(7,1.3,1);subtitle.position.set(0,4.1,-14.4);scene.add(subtitle);
+// stalls placed around a central aisle
+const stallPositions=[[-10,-2],[10,-2],[-10,13],[10,13]];
+const stallObjects=[];
+categories.forEach((cat,i)=>{const [x,z]=stallPositions[i];box(8,.35,6,dark,x,.18,z);box(8,.25,6,gold,x,.43,z);box(8,3.2,.25,dark,x,2.1,z-3);box(.25,3.2,6,dark,x-4,2.1,z);box(.25,3.2,6,dark,x+4,2.1,z);box(8,.25,.25,gold,x,3.72,z-3);box(7,.2,2,cream,x,1.45,z-1.6);box(7,.12,.12,gold,x,2.55,z-1.6);
+ const label=textSprite(cat.name.toUpperCase());label.scale.set(5.8,1.45,1);label.position.set(x,4.6,z-2.9);scene.add(label);
+ // stylized display products
+ const stand=box(1.2,.65,1.2,gold,x,1.05,z+.2);box(.12,1.5,.12,dark,x-.42,2.1,z+.2);box(.12,1.5,.12,dark,x+.42,2.1,z+.2);box(1.1,.12,.12,gold,x,2.8,z+.2);
+ const orb=new THREE.Mesh(new THREE.SphereGeometry(.65,20,16),i===1?green:gold);orb.position.set(x,2.1,z+.15);orb.castShadow=true;scene.add(orb);
+ const hotspot=new THREE.Mesh(new THREE.BoxGeometry(7.5,4,5.5),new THREE.MeshBasicMaterial({visible:false}));hotspot.position.set(x,2,z);hotspot.userData.category=cat;scene.add(hotspot);stallObjects.push(hotspot);
+});
+// decorative lamps / planters
+for(let i=0;i<8;i++){let x=(i%2?1:-1)*16,z=-8+i*3.5;box(.25,3,.25,gold,x,1.5,z);const l=new THREE.PointLight(0xffd77a,1.1,8);l.position.set(x,3.2,z);scene.add(l);const p=new THREE.Mesh(new THREE.CylinderGeometry(.45,.55,.8,12),dark);p.position.set(x,.4,z);scene.add(p);const leaf=new THREE.Mesh(new THREE.SphereGeometry(.65,10,8),green);leaf.position.set(x,1.25,z);scene.add(leaf)}
+// avatar
+const avatar=new THREE.Group();scene.add(avatar);const body=new THREE.Mesh(new THREE.CapsuleGeometry(.38,.75,4,8),mat(0x315b9a));body.position.y=1.05;body.castShadow=true;avatar.add(body);const head=new THREE.Mesh(new THREE.SphereGeometry(.29,16,12),mat(0xe5b88d));head.position.y=1.72;head.castShadow=true;avatar.add(head);const legs=new THREE.Group();avatar.add(legs);[-.19,.19].forEach(x=>{const leg=new THREE.Mesh(new THREE.BoxGeometry(.2,.55,.23),dark);leg.position.set(x,.3,0);legs.add(leg)});avatar.position.set(0,0,-7);
+let yaw=0,pitch=0,keys={},joy={x:0,y:0},dragging=false,lastX=0,lastY=0,velocity=new THREE.Vector3();
+function setMode(m){mode=m;$('thirdBtn').classList.toggle('active',m==='third');$('firstBtn').classList.toggle('active',m==='first');$('modeNote').textContent=m==='third'?'WASD / Arrow keys to move · Drag to look':'WASD / Arrow keys to move · Drag to look';avatar.visible=m==='third';}
+$('thirdBtn').onclick=()=>setMode('third');$('firstBtn').onclick=()=>setMode('first');
+function openModal(id){$(id).style.display='flex'}function closeModal(id){$(id).style.display='none'}document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>closeModal(b.dataset.close));
+function showProduct(p){activeProduct=p;$('productTitle').textContent=p.name;$('productEmoji').textContent=p.emoji;$('productInfo').innerHTML='Material: '+p.material+'<br>Size: '+p.size+'<br>Category: '+(activeStall?.name||'Handcrafted Collection');$('productPrice').textContent='₹'+p.price.toLocaleString('en-IN');$('colour').innerHTML=p.colours.map(c=>'<option>'+c+'</option>').join('');$('quantity').value=1;openModal('productModal')}
+$('addToCart').onclick=()=>{if(!activeProduct)return;const q=Math.max(1,Math.min(99,parseInt($('quantity').value)||1));const colour=$('colour').value;const old=cart.find(x=>x.id===activeProduct.id&&x.colour===colour);if(old)old.qty+=q;else cart.push({...activeProduct,colour,qty:q});renderCart();closeModal('productModal');toast('Added to your basket')};
+function renderCart(){$('cartCount').textContent=cart.reduce((s,x)=>s+x.qty,0);$('cartItems').innerHTML=cart.length?cart.map((x,i)=>'<div class="cart-line"><div><b>'+x.emoji+' '+x.name+'</b><div class="muted">'+x.colour+' · Qty '+x.qty+'</div></div><div>₹'+(x.price*x.qty).toLocaleString('en-IN')+'<br><button class="pill" data-remove="'+i+'">Remove</button></div></div>').join(''):'<p class="muted">Your basket is empty. Explore the stalls to find something you love.</p>';const total=cart.reduce((s,x)=>s+x.price*x.qty,0);$('cartTotal').textContent='Total: ₹'+total.toLocaleString('en-IN');$('checkoutTotal').textContent='Order total: ₹'+total.toLocaleString('en-IN');document.querySelectorAll('[data-remove]').forEach(b=>b.onclick=()=>{cart.splice(+b.dataset.remove,1);renderCart()})}
+$('cartBtn').onclick=()=>{renderCart();openModal('cartModal')};$('checkoutBtn').onclick=()=>{if(!cart.length){toast('Your basket is empty');return}closeModal('cartModal');renderCart();openModal('checkoutModal')};
+$('placeOrder').onclick=()=>{const n=$('custName').value.trim(),p=$('custPhone').value.trim(),a=$('custAddress').value.trim();if(!n||p.replace(/\D/g,'').length<10||!a){toast('Please enter name, valid mobile and address');return}const order='AMASS-'+Date.now().toString().slice(-7);closeModal('checkoutModal');cart=[];renderCart();toast('Demo order '+order+' created. No payment was taken.');$('custName').value=$('custPhone').value=$('custAddress').value=''};
+function toast(s){$('toast').textContent=s;$('toast').style.display='block';clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>$('toast').style.display='none',2600)}
+function openStall(cat){activeStall=cat;$('productTitle').textContent=cat.name;$('productEmoji').textContent=cat.emoji;$('productInfo').textContent=cat.desc;$('productPrice').textContent='Explore this collection';$('colour').innerHTML='';$('quantity').value=1;activeProduct=null;$('addToCart').textContent='Browse Products';$('addToCart').onclick=()=>{closeModal('productModal');showProduct(cat.products[0]);$('addToCart').textContent='＋ Add to Basket';$('addToCart').onclick=addCurrentProduct};openModal('productModal')}
+function addCurrentProduct(){$('addToCart').textContent='＋ Add to Basket';if(!activeProduct)return;const q=Math.max(1,parseInt($('quantity').value)||1),colour=$('colour').value;const old=cart.find(x=>x.id===activeProduct.id&&x.colour===colour);if(old)old.qty+=q;else cart.push({...activeProduct,colour,qty:q});renderCart();closeModal('productModal');toast('Added to your basket')}
+function openCategory(cat){activeStall=cat;showProduct(cat.products[0]);$('addToCart').onclick=addCurrentProduct;$('addToCart').textContent='＋ Add to Basket'}
+function catalog(){ $('catalogList').innerHTML=categories.map(c=>'<div class="cart-line"><div><b>'+c.emoji+' '+c.name+'</b><div class="muted">'+c.desc+'</div></div><button class="action" data-cat="'+c.id+'">View</button></div>').join('');document.querySelectorAll('[data-cat]').forEach(b=>b.onclick=()=>{closeModal('catalogModal');openCategory(categories.find(c=>c.id===b.dataset.cat))});openModal('catalogModal')}
+$('catalogEnter').onclick=()=>{catalog();$('intro').style.display='none';started=true};$('enter').onclick=()=>{$('intro').style.display='none';started=true;toast('Welcome! Walk towards any collection stall.')};
+$('interact').onclick=()=>{if(nearStall)openCategory(nearStall)};
+const ray=new THREE.Raycaster(),center=new THREE.Vector2(0,0);
+function updateNear(){if(!started)return;let best=null,dist=999;for(const h of stallObjects){const p=h.position,d=Math.hypot(avatar.position.x-p.x,avatar.position.z-p.z);if(d<6&&d<dist){best=h.userData.category;dist=d}}nearStall=best;$('interact').style.display=best?'block':'none';$('hint').textContent=best?'Near '+best.name+' — tap View Products':'Explore the four collection stalls';}
+function pointerLook(dx,dy){yaw-=dx*.003;pitch=Math.max(-.7,Math.min(.7,pitch-dy*.003))}
+renderer.domElement.addEventListener('pointerdown',e=>{if(!started)return;dragging=true;lastX=e.clientX;lastY=e.clientY;renderer.domElement.setPointerCapture(e.pointerId)});
+renderer.domElement.addEventListener('pointermove',e=>{if(!dragging)return;pointerLook(e.clientX-lastX,e.clientY-lastY);lastX=e.clientX;lastY=e.clientY});
+renderer.domElement.addEventListener('pointerup',()=>dragging=false);renderer.domElement.addEventListener('pointercancel',()=>dragging=false);
+window.addEventListener('keydown',e=>{keys[e.key.toLowerCase()]=true;if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight',' '].includes(e.key))e.preventDefault();if(e.key==='e'||e.key==='Enter'){if(nearStall)openCategory(nearStall)}});window.addEventListener('keyup',e=>keys[e.key.toLowerCase()]=false);
+const joyEl=$('joy'),knob=$('knob');joyEl.addEventListener('pointerdown',e=>{joyEl.setPointerCapture(e.pointerId);moveJoy(e)});joyEl.addEventListener('pointermove',e=>{if(e.buttons)moveJoy(e)});function moveJoy(e){const r=joyEl.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2;let dx=e.clientX-cx,dy=e.clientY-cy;const len=Math.hypot(dx,dy),max=36;if(len>max){dx=dx/len*max;dy=dy/len*max}joy.x=dx/max;joy.y=dy/max;knob.style.transform='translate('+dx+'px,'+dy+'px)'}function resetJoy(){joy={x:0,y:0};knob.style.transform='translate(0,0)'}joyEl.addEventListener('pointerup',resetJoy);joyEl.addEventListener('pointercancel',resetJoy);
+function animate(){requestAnimationFrame(animate);if(started){const forward=(keys.w||keys.arrowup?1:0)-(keys.s||keys.arrowdown?1:0)-joy.y;const side=(keys.d||keys.arrowright?1:0)-(keys.a||keys.arrowleft?1:0)+joy.x;const move=new THREE.Vector3(Math.sin(yaw)*forward+Math.cos(yaw)*side,0,Math.cos(yaw)*forward-Math.sin(yaw)*side);if(move.length()>1)move.normalize();avatar.position.addScaledVector(move,.105);avatar.position.x=THREE.MathUtils.clamp(avatar.position.x,-18,18);avatar.position.z=THREE.MathUtils.clamp(avatar.position.z,-12,23);if(move.length()>.01){avatar.rotation.y=Math.atan2(move.x,move.z);legs.rotation.x=Math.sin(Date.now()*.012)*.25}else legs.rotation.x=0;
+if(mode==='third'){const target=new THREE.Vector3(avatar.position.x-Math.sin(yaw)*5,3.1,avatar.position.z-Math.cos(yaw)*5);camera.position.lerp(target,.12);camera.lookAt(avatar.position.x,1.3,avatar.position.z)}else{camera.position.set(avatar.position.x,1.65,avatar.position.z);camera.rotation.order='YXZ';camera.rotation.set(pitch,yaw,0)}
+updateNear()}renderer.render(scene,camera)}
+animate();
+window.addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(Math.min(devicePixelRatio,1.7))});
+renderCart();catalog();
+</script>
+</body></html>
